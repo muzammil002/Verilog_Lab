@@ -1,0 +1,21 @@
+module part4(SW,HEX0);
+
+	input [1:0] SW;
+	
+	output [6:0] HEX0;
+	
+	reg[6:0] segments;
+	
+	assign HEX0 = segments;
+	
+	always @(SW)
+	begin
+		case({SW})
+		
+		2'b00: segment = 7'b0100001;
+		2'b01: segment = 7'b0000110;
+		2'b10: segment = 7'b1111001;
+		endcase
+	end
+	
+	endmodule 
